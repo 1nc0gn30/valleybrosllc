@@ -1,20 +1,41 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'NeonFont';  /* Define a name for the font */
+  src: url('TiltNeon-Regular.ttf') format('truetype');  /* Point to the font file */
+}
+/* CSS Variables */
+:root {
+  --primary-color: #61dafb;
+  --secondary-color: #ff6a00;
+  --text-shadow: 0 0 0.5rem #61dafb;
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* General App Styling */
+.App {
+  height: 100vh;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s var(--ease-in-out);
+  
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  overflow: hidden;
+}
+
+/* Logo Styling */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  animation: App-logo-spin infinite 20s linear, color-change 5s infinite;
+  margin: 24px;
+  filter: drop-shadow(var(--text-shadow));
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/* Header Styling */
 .App-header {
-  background-color: #282c34;
+  background-image: url(valleybrosllc.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,17 +43,136 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
+  box-shadow: var(--text-shadow);
+  backdrop-filter: blur(5px);
 }
 
+/* Link Styling */
 .App-link {
-  color: #61dafb;
+  color: var(--primary-color);
+  text-shadow: var(--text-shadow);
+  transition: all 0.3s var(--ease-in-out);
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Paragraph Styling */
+p {
+  font-family: 'NeonFont', sans-serif;
+  color: black;
+  font-size: 5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: justify;
+  line-height: 1.6;
+  padding: 20px;
+  border-radius: 12px;
+  transition: all 0.3s var(--ease-in-out);
+}
+
+p:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .App-header {
+    min-height: 50vh;
   }
-  to {
-    transform: rotate(360deg);
+  .App-logo {
+    height: 20vmin;
   }
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Title 1 Styling */
+.title1 {
+  background-image: url(title1background.png);
+  background-size: cover;
+  text-shadow: 2px 2px 4px #000000;
+  border: 2px solid var(--primary-color);
+  transition: all 0.3s var(--ease-in-out);
+}
+
+.title1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Title 2 Styling */
+.title2 {
+  font-size: 2rem;
+  margin-top: -100px;
+  background-image: url(title2background.png);
+  background-size: cover;
+  font-weight: bold;
+  border: solid 2px white;
+  text-decoration: wavy;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 16px rgba(255, 255, 0, 0.6);
+  transition: all 0.3s var(--ease-in-out);
+}
+
+.title2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(255, 255, 0, 0.6);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .App-header {
+    min-height: 100vh; /* Ensures full height */
+  }
+  .App-logo {
+    height: 70vmin;
+  }
+  p {
+    font-size: 1.5rem; /* Reduced font size */
+  }
+  .title2 {
+    margin-top: 10px;
+    font-size: 1rem; /* Reduced font size */
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-image: url(background3.png);
+}
+
+.phone-number, .email-address {
+  color: black;
+  text-decoration: none;
+  margin: 5px;
+  font-size: 1.2rem;
+  
+}
+
+@media screen and (max-width: 768px) {
+  .phone-number, .email-address {
+    font-size: 1rem;
+  }
+}
+
+.button1 {
+  background-image: url(contactbackground.png);
+  color: white;
+
+}
+
+.button1, .title1, .title2, .contact-info, .App-logo {
+  margin: 15px 0; /* Adjust the value as needed */
 }

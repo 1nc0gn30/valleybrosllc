@@ -1,0 +1,75 @@
+/* ServicesList Styling */
+
+/* Container */
+.div1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #6E48AA, #9D50BB);
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+  }
+  
+  /* List */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  li {
+    padding: 10px;
+    font-size: 1.2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  li::before {
+    content: "";
+    background: rgba(255, 255, 255, 0.6);
+    width: 0;
+    height: 100%;
+    left: -100%;
+    top: 0;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+  }
+  
+  li:hover::before {
+    left: 100%;
+    width: 100%;
+  }
+  
+  /* Back Button */
+  button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #6E48AA;
+    background: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background: #9D50BB;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:active {
+    transform: translateY(1px);
+  }
+  
