@@ -15,7 +15,7 @@ function App() {
           <>
             <div className='contact-info'>
               <a href='tel:+17572689454' className='phone-number'>Call Us: +1 757 268 9454</a>
-              <a href='mailto:info@valleybrosllc.com' className='email-address'>Email: valleybrosllc@gmail.com</a>
+              <a href='mailto:valleybrosllc@gmail.com' className='email-address'>Email: valleybrosllc@gmail.com</a>
             </div>
             <img src={logo} className="App-logo" alt="logo" />
             <button className='button1' onClick={() => setShowServices(true)}>Services</button>
