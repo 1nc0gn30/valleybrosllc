@@ -14,10 +14,10 @@ function ContactForm({ onBack }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-    alert('Form submitted! Check the console for data.');
+    const mailtoLink = `mailto:valleybrosllc@gmail.com?subject=Contact Form Submission&body=Name: ${formData.name}%0DEmail: ${formData.email}%0DMessage: ${formData.message}`;
+    window.location.href = mailtoLink;
   };
+  
 
   return (
     <div className="ContactSection">
