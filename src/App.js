@@ -48,7 +48,9 @@ const Titles = () => (
             <>
               
               <div className="container1">
+                <div className="logo1" >
                 <Logo />
+                </div>
                 <ServiceButton onClick={() => setShowServices(true)} />
                 <button className='button1' onClick={() => setShowContactForm(true)} data-aos="zoom-in">Contact Us</button>
               </div>
