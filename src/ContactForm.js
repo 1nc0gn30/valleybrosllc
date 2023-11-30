@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import './ContactForm.css';
 
 function ContactForm({ onBack }) {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,31 +10,28 @@ function ContactForm({ onBack }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const mailtoLink = `mailto:valleybrosllc@gmail.com?subject=Contact Form Submission&body=Name: ${formData.name}%0DEmail: ${formData.email}%0DMessage: ${formData.message}`;
+    const { name, email, message } = formData;
+    const mailtoLink = `mailto:valleybrosllc@gmail.com?subject=Contact Form Submission&body=Name: ${name}%0DEmail: ${email}%0DMessage: ${message}`;
     window.location.href = mailtoLink;
   };
-  
 
   return (
     <div className="ContactSection">
-        <h2>Contact Us</h2>
-        <h3>Please leave a short message</h3>
+      <h2>Contact Us</h2>
+      <h3>Please leave a short message</h3>
       <form onSubmit={handleSubmit}>
-        <label>
-          Name:
+        <div className="form-group">
+          <label>Name:</label>
           <input type="text" name="name" value={formData.name} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Email:
+        </div>
+        <div className="form-group">
+          <label>Email:</label>
           <input type="email" name="email" value={formData.email} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Message:
+        </div>
+        <div className="form-group">
+          <label>Message:</label>
           <textarea name="message" value={formData.message} onChange={handleChange} />
-        </label>
-        <br />
+        </div>
         <button type="submit">Submit</button>
       </form>
       <button onClick={onBack}>Back</button>
