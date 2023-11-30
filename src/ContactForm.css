@@ -1,0 +1,108 @@
+/* Enhanced Form Styling */
+/* Enhanced Form Styling */
+.ContactSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 25px;
+    background: linear-gradient(to right, #ffffff, #f8f8f8);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+  }
+  
+  form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Label Styling */
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  /* Adjusts the label text to align at the top */
+  label span {
+    margin-bottom: 5px;
+  }
+  
+  input, textarea {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s, box-shadow 0.3s;
+  }
+  
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #9D50BB;
+    box-shadow: 0 2px 8px rgba(146, 124, 255, 0.4);
+  }
+  
+ 
+  
+  /* Enhanced Button Styling */
+  button {
+    padding: 15px 30px;
+    background-color: #6E48AA;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(110, 72, 170, 0.2);
+  }
+  
+  button:hover {
+    background-color: #9D50BB;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(157, 80, 187, 0.3);
+  }
+  
+  button:active {
+    transform: translateY(1px);
+  }
+  
+  /* Enhanced Navigation Link Styling */
+  nav a {
+    padding: 12px 25px;
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
+  }
+  
+  nav a:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(69, 160, 73, 0.3);
+  }
+  
+  nav a:active {
+    transform: translateY(1px);
+  }
+  
+  /* Accessibility Improvements */
+  input:focus, textarea:focus, button:focus, nav a:focus {
+    outline: 3px solid #6E48AA; /* Focus outline color */
+  }
+  

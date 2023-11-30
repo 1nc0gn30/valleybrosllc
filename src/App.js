@@ -1,35 +1,65 @@
-import React, { useState } from 'react';
-import logo from './logo.png';
+import React, { useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import the AOS styles
+import logo from './vblogo.png';
 import './App.css';
 import ServicesList from './ServicesList';
+import ContactForm from './ContactForm'; 
 
-function App() {
-  const [showServices, setShowServices] = useState(false);
+const ContactInfo = () => (
+  <div className='contact-info' data-aos="fade-right">
+    <a href='tel:+17578396554' className='phone-number'>Call Us: +1 757 839 6554</a>
+    <a href='mailto:valleybrosllc@gmail.com' className='email-address'>Email: valleybrosllc@gmail.com</a>
+  </div>
+);
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        {showServices ? (
-          <ServicesList onBack={() => setShowServices(false)} />
-        ) : (
-          <>
-            <div className='contact-info'>
-              <a href='tel:+17572689454' className='phone-number'>Call Us: +1 757 268 9454</a>
-              <a href='mailto:valleybrosllc@gmail.com' className='email-address'>Email: valleybrosllc@gmail.com</a>
-            </div>
-            <img src={logo} className="App-logo" alt="logo" />
-            <button className='button1' onClick={() => setShowServices(true)}>Services</button>
-            <p className='title1'>
-             Valley Bros LLC
-            </p>
-            <p className='title2'>
-              Digital Era Businesses
-            </p>
-          </>
-        )}
-      </header>
-    </div>
-  );
-}
+const ServiceButton = ({ onClick }) => (
+  <button className='button1' onClick={onClick} data-aos="zoom-in">Services</button>
+);
 
-export default App;
+const Logo = () => (
+  <img src={logo} className="App-logo" alt="Valley Bros LLC Logo" data-aos="flip-left" />
+);
+
+const Titles = () => (
+  <>
+    <p className='title1' data-aos="fade-up">Valley Bros LLC</p>
+    <p className='title2' data-aos="fade-down">Digital Era Businesses</p>
+  </>
+);
+
+
+  function App() {
+    const [showServices, setShowServices] = useState(false);
+    const [showContactForm, setShowContactForm] = useState(false); // State to toggle Contact Form
+  
+    useEffect(() => {
+      AOS.init();
+    }, []);
+  
+    return (
+      <div className="App">
+        <header className="App-header">
+          {showServices ? (
+            <ServicesList onBack={() => setShowServices(false)} />
+          ) : showContactForm ? (
+            <ContactForm onBack={() => setShowContactForm(false)} />
+          ) : (
+            <>
+              
+              <div className="container1">
+                <Logo />
+                <ServiceButton onClick={() => setShowServices(true)} />
+                <button className='button1' onClick={() => setShowContactForm(true)} data-aos="zoom-in">Contact Us</button>
+              </div>
+              <Titles />
+              <ContactInfo />
+            </>
+          )}
+        </header>
+      </div>
+    );
+  }
+  
+  export default App;
+  

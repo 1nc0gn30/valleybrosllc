@@ -1,215 +1,152 @@
-/* Font Face */
-@font-face {
-  font-family: 'NeonFont';
-  src: url('TiltNeon-Regular.ttf') format('truetype');
-}
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /* CSS Variables */
 :root {
-  --primary-color: #61dafb;
-  --secondary-color: #ff6a00;
-  --text-shadow: 0 0 0.5rem #61dafb;
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --primary-color: #4f5ad54d;
+  --secondary-color: #ff758c;
+  --tertiary-color: #f0e6f6;
+  --text-color: #333;
+  --hover-effect: scale(1.03);
+  --transition-speed: 0.3s;
 }
 
-/* Reset some default browser styles */
-body, h1, h2, h3, p, ul, li {
+/* Reset Browser Styles */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-}
-
-/* Universal styling */
-* {
   box-sizing: border-box;
 }
 
-/* General App Styling */
+/* Body Styling */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  background-image: url(./background.gif);
+  background-size: cover;
+  background-attachment: fixed;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
 }
 
+/* App Container */
 .App {
+  min-height: 100vh;
   max-width: 1200px;
   margin: auto;
-  overflow: hidden;
-  padding: 0 2rem;
+  padding: 1rem;
   text-align: center;
-  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-  transition: all 0.3s var(--ease-in-out);
 }
 
 /* Header Styling */
 .App-header {
-  background-image: url(valleybrosllc.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
-  text-shadow: var(--text-shadow);
-  backdrop-filter: blur(5px);
+  padding: 50px 0;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo Styling */
+/* Logo Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .App-logo {
-  height: 40vmin;
-  margin: 24px;
-  pointer-events: none;
-  animation: App-logo-spin infinite 20s linear, color-change 5s infinite;
-  filter: drop-shadow(var(--text-shadow));
+  height: 30vmin;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+  border-radius: 5px;
 }
 
-/* Link Styling */
-.App-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: all 0.3s var(--ease-in-out);
+/* Button Styling */
+.button1 {
+  margin-top: 10px;
+  background: var(--secondary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform var(--transition-speed);
 }
 
-.App-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.button1:hover {
+  transform: var(--hover-effect);
+}
+
+/* Title Styling */
+.title1,
+.title2 {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition-speed);
+}
+
+.title1:hover,
+.title2:hover {
+  transform: var(--hover-effect);
 }
 
 /* Paragraph Styling */
 p {
-  font-family: 'NeonFont', sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.6;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgb(0, 0, 0);
   padding: 20px;
-  border-radius: 12px;
-  transition: all 0.3s var(--ease-in-out);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed);
 }
 
 p:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: var(--hover-effect);
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .App-header {
-    min-height: 50vh;
-  }
-  .App-logo {
-    height: 20vmin;
-  }
-  p {
-    font-size: 1.2rem;
-  }
-}
-
-/* Additional Styles for Professionalism */
-.title1, .title2, .contact-info, .button1 {
-  margin: 15px 0;
-}
-
-
-/* Title 1 Styling */
-.title1 {
-  background-image: url(title1background.png);
-  background-size: cover;
-  text-shadow: 2px 2px 4px #000000;
-  border: 2px solid var(--primary-color);
-  transition: all 0.3s var(--ease-in-out);
-}
-
-.title1:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-/* Title 2 Styling */
-.title2 {
-  font-size: 2rem;
-  margin-top: -100px;
-  background-image: url(title2background.png);
-  background-size: cover;
-  font-weight: bold;
-  border: solid 2px white;
-  text-decoration: wavy;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  box-shadow: 0 4px 16px rgba(255, 255, 0, 0.6);
-  transition: all 0.3s var(--ease-in-out);
-}
-
-.title2:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(255, 255, 0, 0.6);
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .App-header {
-    min-height: 100vh; /* Ensures full height */
-  }
-  .App-logo {
-    height: 70vmin;
-  }
-  p {
-    font-size: 1.5rem; /* Reduced font size */
-  }
-  .title2 {
-    margin-top: 10px;
-    font-size: 1rem; /* Reduced font size */
-  }
-}
-
+/* Contact Info */
 .contact-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  background-image: url(background3.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 2px solid black;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  padding: 2rem;
-}
-
-.contact-info:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-
-.phone-number, .email-address {
-  color: black;
-  text-decoration: none;
-  margin: 5px;
-  font-size: 1.2rem;
-  
-}
-
-@media screen and (max-width: 768px) {
-  .phone-number, .email-address {
-    font-size: 0.7rem;
-  }
-}
-
-.button1 {
-  background-image: url(contactbackground.png);
+  padding: 20px;
+  background: var(--primary-color);
   color: white;
-
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.button1, .title1, .title2, .contact-info, .App-logo {
-  margin: 15px 0; /* Adjust the value as needed */
+.phone-number,
+.email-address {
+  margin: 10px 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .title1, .title2 {
+    font-size: 1.8rem;
+  }
+
+  .App-logo {
+    height: 20vmin;
+  }
+
+  p {
+    font-size: 1rem;
+  }
 }
