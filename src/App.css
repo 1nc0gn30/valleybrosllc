@@ -24,7 +24,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--text-color);
-  background-image: url(./background.gif);
+  background: rgba(0, 0, 0, 0.959);
   background-size: cover;
   background-attachment: fixed;
   line-height: 1.6;

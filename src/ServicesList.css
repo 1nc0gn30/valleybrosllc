@@ -14,7 +14,7 @@
 }
 
 .div1:hover {
-  transform: scale(1.02);
+  transform: scale(0.99);
   box-shadow: 0px 20px 40px -10px rgba(0, 0, 0, 0.9);
 }
 
